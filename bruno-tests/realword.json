@@ -1,0 +1,718 @@
+{
+  "name": "realword",
+  "version": "1",
+  "items": [
+    {
+      "type": "http",
+      "name": "get profile",
+      "seq": 1,
+      "request": {
+        "url": "{{apiUrl}}/profiles/{{randomUserName}}",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "test(\"Statut HTTP est 200\", function () {\r\n    expect(res.getStatus()).to.equal(200);\r\n});",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "folder",
+      "name": "3-articles",
+      "items": [
+        {
+          "type": "http",
+          "name": "create article",
+          "seq": 1,
+          "request": {
+            "url": "{{apiUrl}}/articles",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Token {{jwtToken}}",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"article\": {\n    \"title\": \"How to train your dragon{{rand}}\",\n    \"description\": \"Ever wonder how?\",\n    \"body\": \"You have to believe\",\n    \"tagList\": [\"reactjs\", \"angularjs\", \"dragons\"]\n  }\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "req": "var randomNumber = Math.floor(Math.random() * 999) + 1;\nbru.setVar(\"rand\",randomNumber)",
+              "res": "bru.setVar(\"slug\",res.getBody().article.slug)"
+            },
+            "vars": {},
+            "assertions": [],
+            "tests": "test(\"Statut HTTP est 200\", function () {\n    expect(res.getStatus()).to.equal(200);\n});\n\ntest(\"Le temps de réponse est inférieur à 200ms\", function () {\n    expect(res.getResponseTime()).to.be.below(200);\n});",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "get articles",
+          "seq": 3,
+          "request": {
+            "url": "{{apiUrl}}/articles",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "test(\"Response status code is 200\", function () {\n    expect(res.getStatus()).to.equal(200);\n});\n\n\ntest(\"Content type is application/json\", function () {\n//     expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\n});\n\n\ntest(\"Response includes the articles array\", function () {\n    const responseData = res.getBody();\n    \n    expect(responseData).to.be.an('object');\n    expect(responseData.articles).to.exist.and.to.be.an('array');\n});\n\n\ntest(\"Articles count is a non-negative integer\", function () {\n    const responseData = res.getBody();\n    \n    expect(responseData).to.be.an('object');\n    expect(responseData.articlesCount).to.be.a('number').and.to.satisfy(count => count >= 0, \"Articles count must be a non-negative integer\");\n});\n\n\n// test(\"Verify that the 'articles' array is empty if 'articlesCount' is 0\", function () {\n//     const responseData = res.getBody();\n    \n//     expect(responseData).to.be.an('object');\n//     expect(responseData.articles).to.be.an('array');\n//     expect(responseData.articles).to.have.lengthOf(0);\n//     expect(responseData.articlesCount).to.equal(0);\n// });",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "feed",
+          "seq": 4,
+          "request": {
+            "url": "{{apiUrl}}/articles/feed",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Token {{jwtToken}}",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "test(\"Statut HTTP est 200\", function () {\n    expect(res.getStatus()).to.equal(200);\n});\n\ntest(\"Le temps de réponse est inférieur à 200ms\", function () {\n    expect(res.getResponseTime()).to.be.below(200);\n});",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Follow user",
+          "seq": 2,
+          "request": {
+            "url": "{{apiUrl}}/profiles/{{randomUserName2}}/follow",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Token {{jwtToken}}",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "test(\"Statut HTTP est 200\", function () {\r\n    expect(res.getStatus()).to.equal(200);\r\n});\r\n\r\ntest(\"Le temps de réponse est inférieur à 200ms\", function () {\r\n    expect(res.getResponseTime()).to.be.below(200);\r\n});",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "get article",
+          "seq": 5,
+          "request": {
+            "url": "{{apiUrl}}/articles/{{slug}}",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "update article",
+          "seq": 6,
+          "request": {
+            "url": "{{apiUrl}}/articles/{{slug}}",
+            "method": "PUT",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Token {{jwtToken}}",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"article\": {\n    \"title\": \"Did you train your dragon{{random}}\"\n  }\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "req": "bru.setVar(\"random\",Date.now())",
+              "res": "bru.setVar(\"slug2\",res.getBody().article.slug)"
+            },
+            "vars": {},
+            "assertions": [],
+            "tests": "test(\"Statut HTTP est 200\", function () {\n    expect(res.getStatus()).to.equal(200);\n});\n\ntest(\"Le temps de réponse est inférieur à 200ms\", function () {\n    expect(res.getResponseTime()).to.be.below(200);\n});",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "1-Auth",
+      "items": [
+        {
+          "type": "http",
+          "name": "login",
+          "seq": 3,
+          "request": {
+            "url": "{{apiUrl}}/users/login",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\r\n  \"user\":{\r\n    \"email\": \"{{randomEmail}}\",\r\n    \"password\": \"{{randomUserName}}\"\r\n  }\r\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": "bru.setVar(\"jwtToken\", res.getBody().user.token);"
+            },
+            "vars": {},
+            "assertions": [],
+            "tests": "test(\"Statut HTTP est 201\", function () {\n    expect(res.getStatus()).to.equal(201);\n});\nvar jsonData = res.getBody();\ntest(\"la response contient un user\", function () {\n    expect(jsonData).to.have.property('user');\n});\ntest(\"Le temps de réponse est inférieur à 200ms\", function () {\n    expect(res.getResponseTime()).to.be.below(200);\n});\n\n",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "register",
+          "seq": 1,
+          "request": {
+            "url": "{{apiUrl}}/users",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\r\n  \"user\":{\r\n    \"username\": \"{{randomUserName}}\",\r\n    \"email\": \"{{randomEmail}}\",\r\n    \"password\": \"{{randomUserName}}\"\r\n  }\r\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "req": "var randomPrefix = Math.random().toString(36).substring(2, 12); \nvar timestamp = Date.now().toString().slice(-6); \nvar randomUsername = (randomPrefix + timestamp).substring(0, 30); \nvar randomEmail = randomUsername + \"@example.com\";\n\nbru.setVar(\"randomUserName\", randomUsername)\nbru.setVar(\"randomEmail\", randomEmail);\n"
+            },
+            "vars": {},
+            "assertions": [],
+            "tests": "test(\"Statut HTTP est 201\", function () {\r\n    expect(res.getStatus()).to.equal(201);\r\n});\r\n",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "register2",
+          "seq": 2,
+          "request": {
+            "url": "{{apiUrl}}/users",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"user\":{\n    \"username\": \"{{randomUserName2}}\",\n    \"email\": \"{{randomEmail2}}\",\n    \"password\": \"{{randomUserName2}}\"\n  }\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "req": "var randomPrefix2 = Math.random().toString(36).substring(2, 12); \nvar timestamp2 = Date.now().toString().slice(-6); \nvar randomUsername2 = (randomPrefix2 + timestamp2).substring(0, 30); \nvar randomEmail2 = randomUsername2 + \"@example.com\";\n\nbru.setVar(\"randomUserName2\", randomUsername2)\nbru.setVar(\"randomEmail2\", randomEmail2);\n"
+            },
+            "vars": {},
+            "assertions": [],
+            "tests": "test(\"Statut HTTP est 201\", function () {\r\n    expect(res.getStatus()).to.equal(201);\r\n});\r\n",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "2-user",
+      "items": [
+        {
+          "type": "http",
+          "name": "update user",
+          "seq": 2,
+          "request": {
+            "url": "{{apiUrl}}/user",
+            "method": "PUT",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Token {{jwtToken}}",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\r\n  \"user\":{\r\n    \"email\": \"{{randomEmail}}\",\r\n    \"bio\": \"I like to skateboard\",\r\n    \"image\": \"https://i.stack.imgur.com/xHWG8.jpg\"\r\n  }\r\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "test(\"Statut HTTP est 200\", function () {\r\n    expect(res.getStatus()).to.equal(200);\r\n});",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "get user",
+          "seq": 1,
+          "request": {
+            "url": "{{apiUrl}}/user",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Token {{jwtToken}}",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "name": "Authorization",
+                "value": "Token {{jwtToken}}",
+                "type": "query",
+                "enabled": false
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "test(\"Statut HTTP est 200\", function () {\r\n    expect(res.getStatus()).to.equal(200);\r\n});",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "http",
+      "name": "unfollow user",
+      "seq": 2,
+      "request": {
+        "url": "{{apiUrl}}/profiles/{{randomUserName}}/follow",
+        "method": "DELETE",
+        "headers": [
+          {
+            "name": "Authorization",
+            "value": "Token {{jwtToken}}",
+            "enabled": true
+          }
+        ],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "test(\"Statut HTTP est 200\", function () {\r\n    expect(res.getStatus()).to.equal(200);\r\n});\r\n\r\ntest(\"Le temps de réponse est inférieur à 200ms\", function () {\r\n    expect(res.getResponseTime()).to.be.below(200);\r\n});",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "folder",
+      "name": "4-comments",
+      "items": [
+        {
+          "type": "http",
+          "name": "add comment to an article",
+          "seq": 1,
+          "request": {
+            "url": "{{apiUrl}}/articles/{{slug2}}/comments",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Token {{jwtToken}}",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"comment\": {\n    \"body\": \"His name was my name too.\"\n  }\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": "bru.setVar(\"id\",res.getBody().comment.id)"
+            },
+            "vars": {},
+            "assertions": [],
+            "tests": "test(\"Statut HTTP est 200\", function () {\n    expect(res.getStatus()).to.equal(200);\n});\n\ntest(\"Le temps de réponse est inférieur à 200ms\", function () {\n    expect(res.getResponseTime()).to.be.below(200);\n});",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "get comments from article",
+          "seq": 2,
+          "request": {
+            "url": "{{apiUrl}}/articles/{{slug2}}/comments",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "test(\"Statut HTTP est 200\", function () {\n    expect(res.getStatus()).to.equal(200);\n});\n\ntest(\"Le temps de réponse est inférieur à 200ms\", function () {\n    expect(res.getResponseTime()).to.be.below(200);\n});",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "delete comment",
+          "seq": 3,
+          "request": {
+            "url": "{{apiUrl}}/articles/{{slug2}}/comments/{{id}}",
+            "method": "DELETE",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Token {{jwtToken}}",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "test(\"Statut HTTP est 200\", function () {\n    expect(res.getStatus()).to.equal(200);\n});\n\ntest(\"Le temps de réponse est inférieur à 200ms\", function () {\n    expect(res.getResponseTime()).to.be.below(200);\n});",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "5-favorite",
+      "items": [
+        {
+          "type": "http",
+          "name": "add article to favorite",
+          "seq": 1,
+          "request": {
+            "url": "{{apiUrl}}/articles/{{slug2}}/favorite",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Token {{jwtToken}}",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "test(\"Statut HTTP est 200\", function () {\n    expect(res.getStatus()).to.equal(200);\n});\n\ntest(\"Le temps de réponse est inférieur à 200ms\", function () {\n    expect(res.getResponseTime()).to.be.below(200);\n});",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "delete article from favorite",
+          "seq": 2,
+          "request": {
+            "url": "{{apiUrl}}/articles/{{slug2}}/favorite",
+            "method": "DELETE",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Token {{jwtToken}}",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "test(\"Statut HTTP est 200\", function () {\n    expect(res.getStatus()).to.equal(200);\n});\n\ntest(\"Le temps de réponse est inférieur à 200ms\", function () {\n    expect(res.getResponseTime()).to.be.below(200);\n});",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "http",
+      "name": "get tag",
+      "seq": 4,
+      "request": {
+        "url": "{{apiUrl}}/tags",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "test(\"Statut HTTP est 200\", function () {\n    expect(res.getStatus()).to.equal(200);\n});\n\ntest(\"Le temps de réponse est inférieur à 200ms\", function () {\n    expect(res.getResponseTime()).to.be.below(200);\n});",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "delete article",
+      "seq": 4,
+      "request": {
+        "url": "{{apiUrl}}/articles/{{slug2}}",
+        "method": "DELETE",
+        "headers": [
+          {
+            "name": "Authorization",
+            "value": "Token {{jwtToken}}",
+            "enabled": true
+          }
+        ],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "test(\"Statut HTTP est 200\", function () {\n    expect(res.getStatus()).to.equal(200);\n});\n\ntest(\"Le temps de réponse est inférieur à 200ms\", function () {\n    expect(res.getResponseTime()).to.be.below(200);\n});",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    }
+  ],
+  "activeEnvironmentUid": "T0jjf6YO7TQjXDvVm1Lu8",
+  "environments": [
+    {
+      "variables": [
+        {
+          "name": "apiUrl",
+          "value": "http://localhost:8080/api",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "randomUserName",
+          "value": "26pegzp7dt051562",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "randomEmail",
+          "value": "26pegzp7dt051562@example.com",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "randomUserName2",
+          "value": "0qddbiobut248278",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "randomEmail2",
+          "value": "0qddbiobut248278@example.com",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "jwtToken",
+          "value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3JlYWx3b3JsZC5pbyIsInN1YiI6IjU1MGJjMGMyLThjZDItNDE2ZC04OWI2LTY3YmUxM2QwMThmOSIsImV4cCI6MTcyODMwNTU0OCwiaWF0IjoxNzI4MzA1MjQ4fQ.iX__y3qsrM5Wdrqqu3Y7X-v0-jRPeKt0eoLlUlufAwt1F32Ff182Wo_GIvMH6TiG8jXbAYBW-SNYZEdvpoAsjrr54H2RdsbhEGoEsEWk2I1ha3ysAbnSfKfcjY-zcv7iHgtRdbwOag1y6k24uelw035ONY4noCzFCOLA9ccoTtyRiYGo557U6WnR4DIXjJ0xGVkkizwTPnmUf1PStG_3v2y_s_0ffaerq7g55Nj4eT0rmHaS_40UM_WLHzwktWvtKrSR4KnDW1RjFqkQcq6cBPnIpVKg5mDkcxyHxcRjESWZBu3QsI7PYbWYla7QnE5VWnvfEesOrlPDf-AYMcCXGg",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        }
+      ],
+      "name": "autre"
+    },
+    {
+      "variables": [
+        {
+          "name": "apiUrl",
+          "value": "http://localhost:8080/api",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "randomUserName",
+          "value": "26pegzp7dt051562",
+          "secret": false,
+          "enabled": true,
+          "type": "text"
+        },
+        {
+          "name": "randomEmail",
+          "value": "26pegzp7dt051562@example.com",
+          "secret": false,
+          "enabled": true,
+          "type": "text"
+        },
+        {
+          "name": "randomUserName2",
+          "value": "yd642wwdcw051892",
+          "secret": false,
+          "enabled": true,
+          "type": "text"
+        },
+        {
+          "name": "randomEmail2",
+          "value": "yd642wwdcw051892@example.com",
+          "secret": false,
+          "enabled": true,
+          "type": "text"
+        },
+        {
+          "name": "jwtToken",
+          "value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3JlYWx3b3JsZC5pbyIsInN1YiI6ImNmOTA3NzBlLWI0MzMtNGMzMy05NWM4LWI3NjJkYmI2ZDNiZSIsImV4cCI6MTcyODMwNTM1MiwiaWF0IjoxNzI4MzA1MDUyfQ.YFjID2rUxwJ6Wj8ZfAOxEWwnETX-sY-XT0fcdN8PmGtmJpA6jfgVb3RvEbZOXDQ96sXKQdq1KV2EE9tdiq-Ugj-9bIQ62-jehkTu9rTRhdhfsmtbp9nKhwT2VHA5wPUySKVgzhTyWAj-p5ux5uUasfBG47o3fg_uXMJwtaQQ8cRP42UnVyJNFNqaU_IXHmj_LI46fc-iE_MbIMGSO_xnnFoDtoeg9havYy4jI4j7p0Q8CYyeREcbmSevvpBB6IYqhu7mlhviSvToDZ9kAp_XX4Rk9h5Oxc0-pWx87iPd0eZm3Arrfn20JOd36hG8UamGDBSb4idnrTzOQYAcQHEHBg",
+          "secret": false,
+          "enabled": true,
+          "type": "text"
+        }
+      ],
+      "name": "local"
+    }
+  ],
+  "root": {
+    "request": {
+      "vars": {
+        "req": [
+          {
+            "name": "apiUrl",
+            "value": "http://localhost:8080/api",
+            "enabled": true,
+            "local": false,
+            "uid": "3SceBHbzvIQpLmz2DGlh5"
+          }
+        ]
+      }
+    }
+  },
+  "brunoConfig": {
+    "version": "1",
+    "name": "realword",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ]
+  }
+}
