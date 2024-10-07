@@ -21,11 +21,17 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Install Bruno
-        run: npm install -g brunorc
+      - name: Clone Bruno CLI from GitHub
+        run: git clone https://github.com/usebruno/bruno.git
+
+      - name: Install Bruno dependencies
+        run: |
+          cd bruno
+          npm install
+          npm run build
 
       - name: Run Bruno tests
         run: |
-          bru run ./bruno-tests/ \
+          ./bin/bru run ../bruno-tests/ \
           --reporters cli,json \
-          --reporter-json-export ./test-reports/bruno-report.json
+          --reporter-json-export ../test-reports/bruno-report.json
