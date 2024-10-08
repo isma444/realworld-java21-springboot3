@@ -53,5 +53,13 @@ jobs:
           cd bruno-tests
           bru run --env local
           
+      - name: Install GPG
+        run: sudo apt-get install gnupg
 
-      
+      - name: Import GPG Private Key
+        run: |
+          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --import
+
+      - name: Sign JAR File
+        run: |
+          gpg --batch --yes --passphrase "${{ secrets.KEYSTORE_PASSWORD }}" -o bootstrap/libs/bootstrap.jar.sig -s bootstrap/libs/bootstrap.jar
