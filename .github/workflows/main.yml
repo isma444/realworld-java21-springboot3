@@ -51,7 +51,7 @@ jobs:
       - name: Run Bruno tests
         run: |
           cd bruno-tests
-          bru run . --env local
+          bru run --env local
           
 
       
