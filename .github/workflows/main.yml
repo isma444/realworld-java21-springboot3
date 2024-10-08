@@ -32,7 +32,7 @@ jobs:
 
       - name: Import GPG Private Key
         run: |
-          echo "${{ secrets.GPG_KEYS }}" | gpg --import
+          echo "${{ secrets.GPG_KEYS }}" | gpg --batch --no-use-agent --import
 
       - name: Sign the Jar File
         run: |
