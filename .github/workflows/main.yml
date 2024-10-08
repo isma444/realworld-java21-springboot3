@@ -42,7 +42,7 @@ jobs:
 
       - name: Run Bruno tests
         run: |
-          bru run bruno-tests/ --env=local \
+          bru run bruno-tests/ --env local \
           --reporters cli,json \
           --reporter-json-export test-reports/bruno-report.json
 
