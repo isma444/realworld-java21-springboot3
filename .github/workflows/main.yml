@@ -1,0 +1,49 @@
+name: CI Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+     
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v2
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+     
+      - name: Build with Gradle
+        run: ./gradlew build --stacktrace
+
+     
+      - name: Run Unit Tests
+        run: ./gradlew test --stacktrace
+
+   
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Install Bruno CLI
+        run: npm install -g @usebruno/cli 
+
+      - name: Run Bruno tests
+        run: |
+          bru run bruno-tests/ --env=local \
+          --reporters cli,json \
+          --reporter-json-export test-reports/bruno-report.json
+
+      
