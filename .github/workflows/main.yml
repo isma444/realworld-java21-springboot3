@@ -34,7 +34,12 @@ jobs:
       - name: Start the Java application
         run: |
           java -jar bootstrap/libs/bootstrap.jar &
-
+          
+      - name: Wait for the application to start
+        run: |
+          echo "Waiting for the application to start..."
+          sleep 10 
+          
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
