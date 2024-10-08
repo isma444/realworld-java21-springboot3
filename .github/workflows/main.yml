@@ -40,7 +40,7 @@ jobs:
           --output bootstrap/build/libs/bootstrap-signed.jar --sign bootstrap/build/libs/bootstrap.jar
           
       - name: Upload Signed JAR Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: signed-jar
           path: bootstrap/build/libs/bootstrap-signed.jar
