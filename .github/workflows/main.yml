@@ -92,3 +92,4 @@ jobs:
         run: |
           cd bruno-tests
           bru run --env local
+
