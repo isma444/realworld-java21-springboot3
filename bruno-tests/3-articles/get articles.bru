@@ -1,0 +1,48 @@
+meta {
+  name: get articles
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{apiUrl}}/articles
+  body: none
+  auth: none
+}
+
+tests {
+  test("Response status code is 200", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+  
+  
+  test("Content type is application/json", function () {
+  //     expect(pm.response.headers.get("Content-Type")).to.include("application/json");
+  });
+  
+  
+  test("Response includes the articles array", function () {
+      const responseData = res.getBody();
+      
+      expect(responseData).to.be.an('object');
+      expect(responseData.articles).to.exist.and.to.be.an('array');
+  });
+  
+  
+  test("Articles count is a non-negative integer", function () {
+      const responseData = res.getBody();
+      
+      expect(responseData).to.be.an('object');
+      expect(responseData.articlesCount).to.be.a('number').and.to.satisfy(count => count >= 0, "Articles count must be a non-negative integer");
+  });
+  
+  
+  // test("Verify that the 'articles' array is empty if 'articlesCount' is 0", function () {
+  //     const responseData = res.getBody();
+      
+  //     expect(responseData).to.be.an('object');
+  //     expect(responseData.articles).to.be.an('array');
+  //     expect(responseData.articles).to.have.lengthOf(0);
+  //     expect(responseData.articlesCount).to.equal(0);
+  // });
+}

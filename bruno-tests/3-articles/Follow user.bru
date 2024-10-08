@@ -1,0 +1,25 @@
+meta {
+  name: Follow user
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{apiUrl}}/profiles/{{randomUserName2}}/follow
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Token {{jwtToken}}
+}
+
+tests {
+  test("Statut HTTP est 200", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("Le temps de réponse est inférieur à 200ms", function () {
+      expect(res.getResponseTime()).to.be.below(200);
+  });
+}

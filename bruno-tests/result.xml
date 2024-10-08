@@ -1,0 +1,1252 @@
+[
+  {
+    "iterationIndex": 0,
+    "summary": {
+      "totalRequests": 20,
+      "passedRequests": 20,
+      "failedRequests": 0,
+      "totalAssertions": 0,
+      "passedAssertions": 0,
+      "failedAssertions": 0,
+      "totalTests": 36,
+      "passedTests": 36,
+      "failedTests": 0
+    },
+    "results": [
+      {
+        "test": {
+          "filename": "1-Auth\\register.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://localhost:8080/api/users",
+          "headers": {
+            "content-type": "application/json"
+          },
+          "data": {
+            "user": {
+              "username": "uyem1g7ihp456592",
+              "email": "uyem1g7ihp456592@example.com",
+              "password": "uyem1g7ihp456592"
+            }
+          }
+        },
+        "response": {
+          "status": 201,
+          "statusText": "",
+          "headers": {
+            "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "pragma": "no-cache",
+            "expires": "0",
+            "x-frame-options": "DENY",
+            "content-type": "application/json",
+            "transfer-encoding": "chunked",
+            "date": "Tue, 08 Oct 2024 08:17:36 GMT",
+            "keep-alive": "timeout=60",
+            "connection": "keep-alive"
+          },
+          "data": {
+            "user": {
+              "email": "uyem1g7ihp456592@example.com",
+              "token": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3JlYWx3b3JsZC5pbyIsInN1YiI6IjdhM2FhOTFhLWY0YWQtNGFlYS1iY2NjLTlhNWFmNzU0MWY5MiIsImV4cCI6MTcyODM3NTc1NiwiaWF0IjoxNzI4Mzc1NDU2fQ.Jt0ZEHp0Cp-Fg5yubLrye_NnFNk-yBwa8sZh5pDkyjL01s9SGfGzc0Q42E1LivKbYzMefWUov-_YiBD-wBXd5GYsxcMpCFM6A_EvYeG4WSYiCIi7-Mnn6BhlqAy2nVZDOaD4IyJCrkM7DqOWfdHxcM8XtULTwu6AagAxZrk5OLXOk4vubNRcMzUP0baIrteW7a2fm1qQxf5zYn49ya_96liOrsHrQSTXQlilUqSG43IpcMT1n9IJ5BhJf1I4woihxuFXDPGddAo0as35msKRaEfgSI7S6oRsCs97Tfa2_MsAcDGqHnb-INczUPTCW-V96J1AcRzqcCJctHsAQqrahA",
+              "username": "uyem1g7ihp456592",
+              "bio": null,
+              "image": null
+            }
+          },
+          "responseTime": 193
+        },
+        "error": null,
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Statut HTTP est 201",
+            "status": "pass",
+            "uid": "hvJK0uPx0J8pSTdfZunqA"
+          }
+        ],
+        "runtime": 0.223146,
+        "suitename": "1-Auth\\register",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "1-Auth\\register2.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://localhost:8080/api/users",
+          "headers": {
+            "content-type": "application/json"
+          },
+          "data": {
+            "user": {
+              "username": "00ow3hvoss456800",
+              "email": "00ow3hvoss456800@example.com",
+              "password": "00ow3hvoss456800"
+            }
+          }
+        },
+        "response": {
+          "status": 201,
+          "statusText": "",
+          "headers": {
+            "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "pragma": "no-cache",
+            "expires": "0",
+            "x-frame-options": "DENY",
+            "content-type": "application/json",
+            "transfer-encoding": "chunked",
+            "date": "Tue, 08 Oct 2024 08:17:36 GMT",
+            "keep-alive": "timeout=60",
+            "connection": "keep-alive"
+          },
+          "data": {
+            "user": {
+              "email": "00ow3hvoss456800@example.com",
+              "token": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3JlYWx3b3JsZC5pbyIsInN1YiI6IjYwODY0MTAyLTBjNzAtNGY3Yy04MjI1LTIxZTgyMDZiZmEyMyIsImV4cCI6MTcyODM3NTc1NiwiaWF0IjoxNzI4Mzc1NDU2fQ.jWOpgRdiob2Au2ZuXkyobf63RQ574jJbt2DLzzzyyusiD0EST_Yn0ZytZ4OatqDUaeUZiEe2CcM0l0F-DhRj-q2UT2QU_g1zrt14-E28i2feV2fBKKnpBkKoQn3dHWHcVa8ucxsVncwcqNfj2_ZOtO6aI-EVLiclj-c5RZgXDTQwXXP0iRPeN45S0mCFynHmIB2jVEF_TJhhs8N9PF8m0x0iaUuwT39fWfy91QrJ7lELZ5tZYP6HE7bnvKmhn_hB88tz0tLHwj1Md9LBAIfUhYUuxxiiufn1f03HGQzZ2E153d5FTogGwBkebqYEPfo4cfwpuBFzxSM18LOUb44mDQ",
+              "username": "00ow3hvoss456800",
+              "bio": null,
+              "image": null
+            }
+          },
+          "responseTime": 177
+        },
+        "error": null,
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Statut HTTP est 201",
+            "status": "pass",
+            "uid": "yQQZLHMsCRGZye7TJE8eM"
+          }
+        ],
+        "runtime": 0.1847485,
+        "suitename": "1-Auth\\register2",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "1-Auth\\login.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://localhost:8080/api/users/login",
+          "headers": {
+            "content-type": "application/json"
+          },
+          "data": {
+            "user": {
+              "email": "uyem1g7ihp456592@example.com",
+              "password": "uyem1g7ihp456592"
+            }
+          }
+        },
+        "response": {
+          "status": 201,
+          "statusText": "",
+          "headers": {
+            "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "pragma": "no-cache",
+            "expires": "0",
+            "x-frame-options": "DENY",
+            "content-type": "application/json",
+            "transfer-encoding": "chunked",
+            "date": "Tue, 08 Oct 2024 08:17:36 GMT",
+            "keep-alive": "timeout=60",
+            "connection": "keep-alive"
+          },
+          "data": {
+            "user": {
+              "email": "uyem1g7ihp456592@example.com",
+              "token": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3JlYWx3b3JsZC5pbyIsInN1YiI6IjdhM2FhOTFhLWY0YWQtNGFlYS1iY2NjLTlhNWFmNzU0MWY5MiIsImV4cCI6MTcyODM3NTc1NywiaWF0IjoxNzI4Mzc1NDU3fQ.fEmTaXwG3bLyaWQbaHGXtPTWiCAiw-suJEbUqMJNS7zCO9J31W_yvHPhtH_49hX3-wJTgIE3rM7JQ_RzxxNMg4eRZqMDUtnyIi4afHVU64VdBLn5CVq0ioTzkWT3_R7K0d_WheHCm1n1mEsAykvagkdZC7uIrDIFYlCB01RXtRlptsE80Y24h-3-z6IY-NNFxCn0lw_vng-Vr7qwxrTPHWjbZ9uZ8G9WP7TcA_d0D6txxfO8KGs75z_9evFvxcobyKp8tPCXHFby0C3iIbEsAbhCtpBS-xihr3GPbzwSboAOVmmX_OSL9jxfggh0kCK6jJB9LgoJ_N_5e8W9ZfATzw",
+              "username": "uyem1g7ihp456592",
+              "bio": null,
+              "image": null
+            }
+          },
+          "responseTime": 83
+        },
+        "error": null,
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Statut HTTP est 201",
+            "status": "pass",
+            "uid": "g7XDGVGf4DG1SlnwXtliG"
+          },
+          {
+            "description": "la response contient un user",
+            "status": "pass",
+            "uid": "u8iaJ8K0P3ZLktTNyXwlG"
+          },
+          {
+            "description": "Le temps de réponse est inférieur à 200ms",
+            "status": "pass",
+            "uid": "qXrY_QRqnRqgZxtPTX5qh"
+          }
+        ],
+        "runtime": 0.0917235,
+        "suitename": "1-Auth\\login",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "2-user\\get user.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://localhost:8080/api/user",
+          "headers": {
+            "Authorization": "Token eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3JlYWx3b3JsZC5pbyIsInN1YiI6IjdhM2FhOTFhLWY0YWQtNGFlYS1iY2NjLTlhNWFmNzU0MWY5MiIsImV4cCI6MTcyODM3NTc1NywiaWF0IjoxNzI4Mzc1NDU3fQ.fEmTaXwG3bLyaWQbaHGXtPTWiCAiw-suJEbUqMJNS7zCO9J31W_yvHPhtH_49hX3-wJTgIE3rM7JQ_RzxxNMg4eRZqMDUtnyIi4afHVU64VdBLn5CVq0ioTzkWT3_R7K0d_WheHCm1n1mEsAykvagkdZC7uIrDIFYlCB01RXtRlptsE80Y24h-3-z6IY-NNFxCn0lw_vng-Vr7qwxrTPHWjbZ9uZ8G9WP7TcA_d0D6txxfO8KGs75z_9evFvxcobyKp8tPCXHFby0C3iIbEsAbhCtpBS-xihr3GPbzwSboAOVmmX_OSL9jxfggh0kCK6jJB9LgoJ_N_5e8W9ZfATzw",
+            "content-type": "application/json"
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "headers": {
+            "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "pragma": "no-cache",
+            "expires": "0",
+            "x-frame-options": "DENY",
+            "content-type": "application/json",
+            "transfer-encoding": "chunked",
+            "date": "Tue, 08 Oct 2024 08:17:36 GMT",
+            "keep-alive": "timeout=60",
+            "connection": "keep-alive"
+          },
+          "data": {
+            "user": {
+              "email": "uyem1g7ihp456592@example.com",
+              "token": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3JlYWx3b3JsZC5pbyIsInN1YiI6IjdhM2FhOTFhLWY0YWQtNGFlYS1iY2NjLTlhNWFmNzU0MWY5MiIsImV4cCI6MTcyODM3NTc1NywiaWF0IjoxNzI4Mzc1NDU3fQ.fEmTaXwG3bLyaWQbaHGXtPTWiCAiw-suJEbUqMJNS7zCO9J31W_yvHPhtH_49hX3-wJTgIE3rM7JQ_RzxxNMg4eRZqMDUtnyIi4afHVU64VdBLn5CVq0ioTzkWT3_R7K0d_WheHCm1n1mEsAykvagkdZC7uIrDIFYlCB01RXtRlptsE80Y24h-3-z6IY-NNFxCn0lw_vng-Vr7qwxrTPHWjbZ9uZ8G9WP7TcA_d0D6txxfO8KGs75z_9evFvxcobyKp8tPCXHFby0C3iIbEsAbhCtpBS-xihr3GPbzwSboAOVmmX_OSL9jxfggh0kCK6jJB9LgoJ_N_5e8W9ZfATzw",
+              "username": "uyem1g7ihp456592",
+              "bio": null,
+              "image": null
+            }
+          },
+          "responseTime": 6
+        },
+        "error": null,
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Statut HTTP est 200",
+            "status": "pass",
+            "uid": "SIUDwqult-i3ne9mDz0S1"
+          }
+        ],
+        "runtime": 0.0112949,
+        "suitename": "2-user\\get user",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "2-user\\update user.bru"
+        },
+        "request": {
+          "method": "PUT",
+          "url": "http://localhost:8080/api/user",
+          "headers": {
+            "Authorization": "Token eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3JlYWx3b3JsZC5pbyIsInN1YiI6IjdhM2FhOTFhLWY0YWQtNGFlYS1iY2NjLTlhNWFmNzU0MWY5MiIsImV4cCI6MTcyODM3NTc1NywiaWF0IjoxNzI4Mzc1NDU3fQ.fEmTaXwG3bLyaWQbaHGXtPTWiCAiw-suJEbUqMJNS7zCO9J31W_yvHPhtH_49hX3-wJTgIE3rM7JQ_RzxxNMg4eRZqMDUtnyIi4afHVU64VdBLn5CVq0ioTzkWT3_R7K0d_WheHCm1n1mEsAykvagkdZC7uIrDIFYlCB01RXtRlptsE80Y24h-3-z6IY-NNFxCn0lw_vng-Vr7qwxrTPHWjbZ9uZ8G9WP7TcA_d0D6txxfO8KGs75z_9evFvxcobyKp8tPCXHFby0C3iIbEsAbhCtpBS-xihr3GPbzwSboAOVmmX_OSL9jxfggh0kCK6jJB9LgoJ_N_5e8W9ZfATzw",
+            "content-type": "application/json"
+          },
+          "data": {
+            "user": {
+              "email": "uyem1g7ihp456592@example.com",
+              "bio": "I like to skateboard",
+              "image": "https://i.stack.imgur.com/xHWG8.jpg"
+            }
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "headers": {
+            "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "pragma": "no-cache",
+            "expires": "0",
+            "x-frame-options": "DENY",
+            "content-type": "application/json",
+            "transfer-encoding": "chunked",
+            "date": "Tue, 08 Oct 2024 08:17:36 GMT",
+            "keep-alive": "timeout=60",
+            "connection": "keep-alive"
+          },
+          "data": {
+            "user": {
+              "email": "uyem1g7ihp456592@example.com",
+              "token": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3JlYWx3b3JsZC5pbyIsInN1YiI6IjdhM2FhOTFhLWY0YWQtNGFlYS1iY2NjLTlhNWFmNzU0MWY5MiIsImV4cCI6MTcyODM3NTc1NywiaWF0IjoxNzI4Mzc1NDU3fQ.fEmTaXwG3bLyaWQbaHGXtPTWiCAiw-suJEbUqMJNS7zCO9J31W_yvHPhtH_49hX3-wJTgIE3rM7JQ_RzxxNMg4eRZqMDUtnyIi4afHVU64VdBLn5CVq0ioTzkWT3_R7K0d_WheHCm1n1mEsAykvagkdZC7uIrDIFYlCB01RXtRlptsE80Y24h-3-z6IY-NNFxCn0lw_vng-Vr7qwxrTPHWjbZ9uZ8G9WP7TcA_d0D6txxfO8KGs75z_9evFvxcobyKp8tPCXHFby0C3iIbEsAbhCtpBS-xihr3GPbzwSboAOVmmX_OSL9jxfggh0kCK6jJB9LgoJ_N_5e8W9ZfATzw",
+              "username": "uyem1g7ihp456592",
+              "bio": "I like to skateboard",
+              "image": "https://i.stack.imgur.com/xHWG8.jpg"
+            }
+          },
+          "responseTime": 13
+        },
+        "error": null,
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Statut HTTP est 200",
+            "status": "pass",
+            "uid": "UDUXFKsDbT98E39k-uDHp"
+          }
+        ],
+        "runtime": 0.0203232,
+        "suitename": "2-user\\update user",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "3-articles\\create article.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://localhost:8080/api/articles",
+          "headers": {
+            "Authorization": "Token eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3JlYWx3b3JsZC5pbyIsInN1YiI6IjdhM2FhOTFhLWY0YWQtNGFlYS1iY2NjLTlhNWFmNzU0MWY5MiIsImV4cCI6MTcyODM3NTc1NywiaWF0IjoxNzI4Mzc1NDU3fQ.fEmTaXwG3bLyaWQbaHGXtPTWiCAiw-suJEbUqMJNS7zCO9J31W_yvHPhtH_49hX3-wJTgIE3rM7JQ_RzxxNMg4eRZqMDUtnyIi4afHVU64VdBLn5CVq0ioTzkWT3_R7K0d_WheHCm1n1mEsAykvagkdZC7uIrDIFYlCB01RXtRlptsE80Y24h-3-z6IY-NNFxCn0lw_vng-Vr7qwxrTPHWjbZ9uZ8G9WP7TcA_d0D6txxfO8KGs75z_9evFvxcobyKp8tPCXHFby0C3iIbEsAbhCtpBS-xihr3GPbzwSboAOVmmX_OSL9jxfggh0kCK6jJB9LgoJ_N_5e8W9ZfATzw",
+            "content-type": "application/json"
+          },
+          "data": {
+            "article": {
+              "title": "How to train your dragon460",
+              "description": "Ever wonder how?",
+              "body": "You have to believe",
+              "tagList": [
+                "reactjs",
+                "angularjs",
+                "dragons"
+              ]
+            }
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "headers": {
+            "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "pragma": "no-cache",
+            "expires": "0",
+            "x-frame-options": "DENY",
+            "content-type": "application/json",
+            "transfer-encoding": "chunked",
+            "date": "Tue, 08 Oct 2024 08:17:36 GMT",
+            "keep-alive": "timeout=60",
+            "connection": "keep-alive"
+          },
+          "data": {
+            "article": {
+              "slug": "how-to-train-your-dragon460",
+              "title": "How to train your dragon460",
+              "description": "Ever wonder how?",
+              "body": "You have to believe",
+              "tagList": [
+                "reactjs",
+                "angularjs",
+                "dragons"
+              ],
+              "createdAt": "2024-10-08T10:17:37.124Z",
+              "updatedAt": "2024-10-08T10:17:37.124Z",
+              "favorited": false,
+              "favoritesCount": 0,
+              "author": {
+                "username": "uyem1g7ihp456592@example.com",
+                "bio": "I like to skateboard",
+                "image": "https://i.stack.imgur.com/xHWG8.jpg",
+                "following": false
+              }
+            }
+          },
+          "responseTime": 45
+        },
+        "error": null,
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Statut HTTP est 200",
+            "status": "pass",
+            "uid": "R95_WWAS7N1ZV6MDuo7Wr"
+          },
+          {
+            "description": "Le temps de réponse est inférieur à 200ms",
+            "status": "pass",
+            "uid": "NkhFiO2wbV0ZdVL2a8hBc"
+          }
+        ],
+        "runtime": 0.0620051,
+        "suitename": "3-articles\\create article",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "3-articles\\Follow user.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://localhost:8080/api/profiles/00ow3hvoss456800/follow",
+          "headers": {
+            "Authorization": "Token eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3JlYWx3b3JsZC5pbyIsInN1YiI6IjdhM2FhOTFhLWY0YWQtNGFlYS1iY2NjLTlhNWFmNzU0MWY5MiIsImV4cCI6MTcyODM3NTc1NywiaWF0IjoxNzI4Mzc1NDU3fQ.fEmTaXwG3bLyaWQbaHGXtPTWiCAiw-suJEbUqMJNS7zCO9J31W_yvHPhtH_49hX3-wJTgIE3rM7JQ_RzxxNMg4eRZqMDUtnyIi4afHVU64VdBLn5CVq0ioTzkWT3_R7K0d_WheHCm1n1mEsAykvagkdZC7uIrDIFYlCB01RXtRlptsE80Y24h-3-z6IY-NNFxCn0lw_vng-Vr7qwxrTPHWjbZ9uZ8G9WP7TcA_d0D6txxfO8KGs75z_9evFvxcobyKp8tPCXHFby0C3iIbEsAbhCtpBS-xihr3GPbzwSboAOVmmX_OSL9jxfggh0kCK6jJB9LgoJ_N_5e8W9ZfATzw"
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "headers": {
+            "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "pragma": "no-cache",
+            "expires": "0",
+            "x-frame-options": "DENY",
+            "content-type": "application/json",
+            "transfer-encoding": "chunked",
+            "date": "Tue, 08 Oct 2024 08:17:36 GMT",
+            "keep-alive": "timeout=60",
+            "connection": "keep-alive"
+          },
+          "data": {
+            "profile": {
+              "username": "00ow3hvoss456800@example.com",
+              "bio": null,
+              "image": null,
+              "following": true
+            }
+          },
+          "responseTime": 21
+        },
+        "error": null,
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Statut HTTP est 200",
+            "status": "pass",
+            "uid": "aLDyXVJAG0tObRFyigrk-"
+          },
+          {
+            "description": "Le temps de réponse est inférieur à 200ms",
+            "status": "pass",
+            "uid": "x3KlrahASYwwfQQmx4ErU"
+          }
+        ],
+        "runtime": 0.0290129,
+        "suitename": "3-articles\\Follow user",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "3-articles\\get articles.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://localhost:8080/api/articles",
+          "headers": {}
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "headers": {
+            "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "pragma": "no-cache",
+            "expires": "0",
+            "x-frame-options": "DENY",
+            "content-type": "application/json",
+            "transfer-encoding": "chunked",
+            "date": "Tue, 08 Oct 2024 08:17:36 GMT",
+            "keep-alive": "timeout=60",
+            "connection": "keep-alive"
+          },
+          "data": {
+            "articles": [
+              {
+                "slug": "how-to-train-your-dragon460",
+                "title": "How to train your dragon460",
+                "description": "Ever wonder how?",
+                "body": "You have to believe",
+                "tagList": [
+                  "angularjs",
+                  "dragons",
+                  "reactjs"
+                ],
+                "createdAt": "2024-10-08T10:17:37.124Z",
+                "updatedAt": "2024-10-08T10:17:37.124Z",
+                "favorited": false,
+                "favoritesCount": 0,
+                "author": {
+                  "username": "uyem1g7ihp456592@example.com",
+                  "bio": "I like to skateboard",
+                  "image": "https://i.stack.imgur.com/xHWG8.jpg",
+                  "following": false
+                }
+              }
+            ],
+            "articlesCount": 1
+          },
+          "responseTime": 12
+        },
+        "error": null,
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Response status code is 200",
+            "status": "pass",
+            "uid": "zziP28HKVmOhtAHQYpZcT"
+          },
+          {
+            "description": "Content type is application/json",
+            "status": "pass",
+            "uid": "kY8hByMGppWinNj2E2wWW"
+          },
+          {
+            "description": "Response includes the articles array",
+            "status": "pass",
+            "uid": "AW3D39JWkogRiV9UsoYoj"
+          },
+          {
+            "description": "Articles count is a non-negative integer",
+            "status": "pass",
+            "uid": "y9BLiipoSqhjjax-RWIp9"
+          }
+        ],
+        "runtime": 0.0185625,
+        "suitename": "3-articles\\get articles",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "3-articles\\feed.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://localhost:8080/api/articles/feed",
+          "headers": {
+            "Authorization": "Token eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3JlYWx3b3JsZC5pbyIsInN1YiI6IjdhM2FhOTFhLWY0YWQtNGFlYS1iY2NjLTlhNWFmNzU0MWY5MiIsImV4cCI6MTcyODM3NTc1NywiaWF0IjoxNzI4Mzc1NDU3fQ.fEmTaXwG3bLyaWQbaHGXtPTWiCAiw-suJEbUqMJNS7zCO9J31W_yvHPhtH_49hX3-wJTgIE3rM7JQ_RzxxNMg4eRZqMDUtnyIi4afHVU64VdBLn5CVq0ioTzkWT3_R7K0d_WheHCm1n1mEsAykvagkdZC7uIrDIFYlCB01RXtRlptsE80Y24h-3-z6IY-NNFxCn0lw_vng-Vr7qwxrTPHWjbZ9uZ8G9WP7TcA_d0D6txxfO8KGs75z_9evFvxcobyKp8tPCXHFby0C3iIbEsAbhCtpBS-xihr3GPbzwSboAOVmmX_OSL9jxfggh0kCK6jJB9LgoJ_N_5e8W9ZfATzw"
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "headers": {
+            "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "pragma": "no-cache",
+            "expires": "0",
+            "x-frame-options": "DENY",
+            "content-type": "application/json",
+            "transfer-encoding": "chunked",
+            "date": "Tue, 08 Oct 2024 08:17:36 GMT",
+            "keep-alive": "timeout=60",
+            "connection": "keep-alive"
+          },
+          "data": {
+            "articles": [],
+            "articlesCount": 0
+          },
+          "responseTime": 10
+        },
+        "error": null,
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Statut HTTP est 200",
+            "status": "pass",
+            "uid": "OVhPHAsFxr0hEn136qfsJ"
+          },
+          {
+            "description": "Le temps de réponse est inférieur à 200ms",
+            "status": "pass",
+            "uid": "dyHSSywmQFWrhyiP73nXk"
+          }
+        ],
+        "runtime": 0.01477,
+        "suitename": "3-articles\\feed",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "3-articles\\get article.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://localhost:8080/api/articles/how-to-train-your-dragon460",
+          "headers": {}
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "headers": {
+            "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "pragma": "no-cache",
+            "expires": "0",
+            "x-frame-options": "DENY",
+            "content-type": "application/json",
+            "transfer-encoding": "chunked",
+            "date": "Tue, 08 Oct 2024 08:17:36 GMT",
+            "keep-alive": "timeout=60",
+            "connection": "keep-alive"
+          },
+          "data": {
+            "article": {
+              "slug": "how-to-train-your-dragon460",
+              "title": "How to train your dragon460",
+              "description": "Ever wonder how?",
+              "body": "You have to believe",
+              "tagList": [
+                "angularjs",
+                "dragons",
+                "reactjs"
+              ],
+              "createdAt": "2024-10-08T10:17:37.124Z",
+              "updatedAt": "2024-10-08T10:17:37.124Z",
+              "favorited": false,
+              "favoritesCount": 0,
+              "author": {
+                "username": "uyem1g7ihp456592@example.com",
+                "bio": "I like to skateboard",
+                "image": "https://i.stack.imgur.com/xHWG8.jpg",
+                "following": false
+              }
+            }
+          },
+          "responseTime": 8
+        },
+        "error": null,
+        "assertionResults": [],
+        "testResults": [],
+        "runtime": 0.009198,
+        "suitename": "3-articles\\get article",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "3-articles\\update article.bru"
+        },
+        "request": {
+          "method": "PUT",
+          "url": "http://localhost:8080/api/articles/how-to-train-your-dragon460",
+          "headers": {
+            "Authorization": "Token eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3JlYWx3b3JsZC5pbyIsInN1YiI6IjdhM2FhOTFhLWY0YWQtNGFlYS1iY2NjLTlhNWFmNzU0MWY5MiIsImV4cCI6MTcyODM3NTc1NywiaWF0IjoxNzI4Mzc1NDU3fQ.fEmTaXwG3bLyaWQbaHGXtPTWiCAiw-suJEbUqMJNS7zCO9J31W_yvHPhtH_49hX3-wJTgIE3rM7JQ_RzxxNMg4eRZqMDUtnyIi4afHVU64VdBLn5CVq0ioTzkWT3_R7K0d_WheHCm1n1mEsAykvagkdZC7uIrDIFYlCB01RXtRlptsE80Y24h-3-z6IY-NNFxCn0lw_vng-Vr7qwxrTPHWjbZ9uZ8G9WP7TcA_d0D6txxfO8KGs75z_9evFvxcobyKp8tPCXHFby0C3iIbEsAbhCtpBS-xihr3GPbzwSboAOVmmX_OSL9jxfggh0kCK6jJB9LgoJ_N_5e8W9ZfATzw",
+            "content-type": "application/json"
+          },
+          "data": {
+            "article": {
+              "title": "Did you train your dragon1728375457240"
+            }
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "headers": {
+            "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "pragma": "no-cache",
+            "expires": "0",
+            "x-frame-options": "DENY",
+            "content-type": "application/json",
+            "transfer-encoding": "chunked",
+            "date": "Tue, 08 Oct 2024 08:17:36 GMT",
+            "keep-alive": "timeout=60",
+            "connection": "keep-alive"
+          },
+          "data": {
+            "article": {
+              "slug": "did-you-train-your-dragon1728375457240",
+              "title": "Did you train your dragon1728375457240",
+              "description": "Ever wonder how?",
+              "body": "You have to believe",
+              "tagList": [
+                "angularjs",
+                "dragons",
+                "reactjs"
+              ],
+              "createdAt": "2024-10-08T10:17:37.124Z",
+              "updatedAt": "2024-10-08T10:17:37.252Z",
+              "favorited": false,
+              "favoritesCount": 0,
+              "author": {
+                "username": "uyem1g7ihp456592@example.com",
+                "bio": "I like to skateboard",
+                "image": "https://i.stack.imgur.com/xHWG8.jpg",
+                "following": false
+              }
+            }
+          },
+          "responseTime": 17
+        },
+        "error": null,
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Statut HTTP est 200",
+            "status": "pass",
+            "uid": "ISK7KySTVWPdZ3ojuE0r4"
+          },
+          {
+            "description": "Le temps de réponse est inférieur à 200ms",
+            "status": "pass",
+            "uid": "brJ26NwIbs3NRivOXnXXM"
+          }
+        ],
+        "runtime": 0.0265889,
+        "suitename": "3-articles\\update article",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "4-comments\\add comment to an article.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://localhost:8080/api/articles/did-you-train-your-dragon1728375457240/comments",
+          "headers": {
+            "Authorization": "Token eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3JlYWx3b3JsZC5pbyIsInN1YiI6IjdhM2FhOTFhLWY0YWQtNGFlYS1iY2NjLTlhNWFmNzU0MWY5MiIsImV4cCI6MTcyODM3NTc1NywiaWF0IjoxNzI4Mzc1NDU3fQ.fEmTaXwG3bLyaWQbaHGXtPTWiCAiw-suJEbUqMJNS7zCO9J31W_yvHPhtH_49hX3-wJTgIE3rM7JQ_RzxxNMg4eRZqMDUtnyIi4afHVU64VdBLn5CVq0ioTzkWT3_R7K0d_WheHCm1n1mEsAykvagkdZC7uIrDIFYlCB01RXtRlptsE80Y24h-3-z6IY-NNFxCn0lw_vng-Vr7qwxrTPHWjbZ9uZ8G9WP7TcA_d0D6txxfO8KGs75z_9evFvxcobyKp8tPCXHFby0C3iIbEsAbhCtpBS-xihr3GPbzwSboAOVmmX_OSL9jxfggh0kCK6jJB9LgoJ_N_5e8W9ZfATzw",
+            "content-type": "application/json"
+          },
+          "data": {
+            "comment": {
+              "body": "His name was my name too."
+            }
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "headers": {
+            "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "pragma": "no-cache",
+            "expires": "0",
+            "x-frame-options": "DENY",
+            "content-type": "application/json",
+            "transfer-encoding": "chunked",
+            "date": "Tue, 08 Oct 2024 08:17:36 GMT",
+            "keep-alive": "timeout=60",
+            "connection": "keep-alive"
+          },
+          "data": {
+            "comment": {
+              "id": 2,
+              "createdAt": "2024-10-08T10:17:37.275Z",
+              "updatedAt": "2024-10-08T10:17:37.275Z",
+              "body": "His name was my name too.",
+              "author": {
+                "username": "uyem1g7ihp456592@example.com",
+                "bio": "I like to skateboard",
+                "image": "https://i.stack.imgur.com/xHWG8.jpg",
+                "following": false
+              }
+            }
+          },
+          "responseTime": 12
+        },
+        "error": null,
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Statut HTTP est 200",
+            "status": "pass",
+            "uid": "UDCnqv9FYjSNTiflOFrxf"
+          },
+          {
+            "description": "Le temps de réponse est inférieur à 200ms",
+            "status": "pass",
+            "uid": "XxA349i7BC_Vv-OXR63u1"
+          }
+        ],
+        "runtime": 0.0184795,
+        "suitename": "4-comments\\add comment to an article",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "4-comments\\get comments from article.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://localhost:8080/api/articles/did-you-train-your-dragon1728375457240/comments",
+          "headers": {}
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "headers": {
+            "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "pragma": "no-cache",
+            "expires": "0",
+            "x-frame-options": "DENY",
+            "content-type": "application/json",
+            "transfer-encoding": "chunked",
+            "date": "Tue, 08 Oct 2024 08:17:36 GMT",
+            "keep-alive": "timeout=60",
+            "connection": "keep-alive"
+          },
+          "data": {
+            "comments": [
+              {
+                "id": 2,
+                "createdAt": "2024-10-08T10:17:37.275Z",
+                "updatedAt": "2024-10-08T10:17:37.275Z",
+                "body": "His name was my name too.",
+                "author": {
+                  "username": "uyem1g7ihp456592@example.com",
+                  "bio": "I like to skateboard",
+                  "image": "https://i.stack.imgur.com/xHWG8.jpg",
+                  "following": false
+                }
+              }
+            ]
+          },
+          "responseTime": 10
+        },
+        "error": null,
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Statut HTTP est 200",
+            "status": "pass",
+            "uid": "HMgYcxUYQ_WhQJgh-wIYd"
+          },
+          {
+            "description": "Le temps de réponse est inférieur à 200ms",
+            "status": "pass",
+            "uid": "lmHCwmu4FDGpiH8aISXQq"
+          }
+        ],
+        "runtime": 0.0146804,
+        "suitename": "4-comments\\get comments from article",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "4-comments\\delete comment.bru"
+        },
+        "request": {
+          "method": "DELETE",
+          "url": "http://localhost:8080/api/articles/did-you-train-your-dragon1728375457240/comments/2",
+          "headers": {
+            "Authorization": "Token eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3JlYWx3b3JsZC5pbyIsInN1YiI6IjdhM2FhOTFhLWY0YWQtNGFlYS1iY2NjLTlhNWFmNzU0MWY5MiIsImV4cCI6MTcyODM3NTc1NywiaWF0IjoxNzI4Mzc1NDU3fQ.fEmTaXwG3bLyaWQbaHGXtPTWiCAiw-suJEbUqMJNS7zCO9J31W_yvHPhtH_49hX3-wJTgIE3rM7JQ_RzxxNMg4eRZqMDUtnyIi4afHVU64VdBLn5CVq0ioTzkWT3_R7K0d_WheHCm1n1mEsAykvagkdZC7uIrDIFYlCB01RXtRlptsE80Y24h-3-z6IY-NNFxCn0lw_vng-Vr7qwxrTPHWjbZ9uZ8G9WP7TcA_d0D6txxfO8KGs75z_9evFvxcobyKp8tPCXHFby0C3iIbEsAbhCtpBS-xihr3GPbzwSboAOVmmX_OSL9jxfggh0kCK6jJB9LgoJ_N_5e8W9ZfATzw"
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "headers": {
+            "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "pragma": "no-cache",
+            "expires": "0",
+            "x-frame-options": "DENY",
+            "content-length": "0",
+            "date": "Tue, 08 Oct 2024 08:17:36 GMT",
+            "keep-alive": "timeout=60",
+            "connection": "keep-alive"
+          },
+          "data": "",
+          "responseTime": 15
+        },
+        "error": null,
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Statut HTTP est 200",
+            "status": "pass",
+            "uid": "2lVamJvHDQaGue6VcWpg2"
+          },
+          {
+            "description": "Le temps de réponse est inférieur à 200ms",
+            "status": "pass",
+            "uid": "mDFAe1gdKH5OAlKHfG_c3"
+          }
+        ],
+        "runtime": 0.0193154,
+        "suitename": "4-comments\\delete comment",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "5-favorite\\add article to favorite.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://localhost:8080/api/articles/did-you-train-your-dragon1728375457240/favorite",
+          "headers": {
+            "Authorization": "Token eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3JlYWx3b3JsZC5pbyIsInN1YiI6IjdhM2FhOTFhLWY0YWQtNGFlYS1iY2NjLTlhNWFmNzU0MWY5MiIsImV4cCI6MTcyODM3NTc1NywiaWF0IjoxNzI4Mzc1NDU3fQ.fEmTaXwG3bLyaWQbaHGXtPTWiCAiw-suJEbUqMJNS7zCO9J31W_yvHPhtH_49hX3-wJTgIE3rM7JQ_RzxxNMg4eRZqMDUtnyIi4afHVU64VdBLn5CVq0ioTzkWT3_R7K0d_WheHCm1n1mEsAykvagkdZC7uIrDIFYlCB01RXtRlptsE80Y24h-3-z6IY-NNFxCn0lw_vng-Vr7qwxrTPHWjbZ9uZ8G9WP7TcA_d0D6txxfO8KGs75z_9evFvxcobyKp8tPCXHFby0C3iIbEsAbhCtpBS-xihr3GPbzwSboAOVmmX_OSL9jxfggh0kCK6jJB9LgoJ_N_5e8W9ZfATzw"
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "headers": {
+            "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "pragma": "no-cache",
+            "expires": "0",
+            "x-frame-options": "DENY",
+            "content-type": "application/json",
+            "transfer-encoding": "chunked",
+            "date": "Tue, 08 Oct 2024 08:17:36 GMT",
+            "keep-alive": "timeout=60",
+            "connection": "keep-alive"
+          },
+          "data": {
+            "article": {
+              "slug": "did-you-train-your-dragon1728375457240",
+              "title": "Did you train your dragon1728375457240",
+              "description": "Ever wonder how?",
+              "body": "You have to believe",
+              "tagList": [
+                "angularjs",
+                "dragons",
+                "reactjs"
+              ],
+              "createdAt": "2024-10-08T10:17:37.124Z",
+              "updatedAt": "2024-10-08T10:17:37.252Z",
+              "favorited": true,
+              "favoritesCount": 1,
+              "author": {
+                "username": "uyem1g7ihp456592@example.com",
+                "bio": "I like to skateboard",
+                "image": "https://i.stack.imgur.com/xHWG8.jpg",
+                "following": false
+              }
+            }
+          },
+          "responseTime": 37
+        },
+        "error": null,
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Statut HTTP est 200",
+            "status": "pass",
+            "uid": "UzAgIP4-_1M_H_QESEJIV"
+          },
+          {
+            "description": "Le temps de réponse est inférieur à 200ms",
+            "status": "pass",
+            "uid": "BZtBZBD4mSfhgHPXNmIjS"
+          }
+        ],
+        "runtime": 0.0432566,
+        "suitename": "5-favorite\\add article to favorite",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "5-favorite\\delete article from favorite.bru"
+        },
+        "request": {
+          "method": "DELETE",
+          "url": "http://localhost:8080/api/articles/did-you-train-your-dragon1728375457240/favorite",
+          "headers": {
+            "Authorization": "Token eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3JlYWx3b3JsZC5pbyIsInN1YiI6IjdhM2FhOTFhLWY0YWQtNGFlYS1iY2NjLTlhNWFmNzU0MWY5MiIsImV4cCI6MTcyODM3NTc1NywiaWF0IjoxNzI4Mzc1NDU3fQ.fEmTaXwG3bLyaWQbaHGXtPTWiCAiw-suJEbUqMJNS7zCO9J31W_yvHPhtH_49hX3-wJTgIE3rM7JQ_RzxxNMg4eRZqMDUtnyIi4afHVU64VdBLn5CVq0ioTzkWT3_R7K0d_WheHCm1n1mEsAykvagkdZC7uIrDIFYlCB01RXtRlptsE80Y24h-3-z6IY-NNFxCn0lw_vng-Vr7qwxrTPHWjbZ9uZ8G9WP7TcA_d0D6txxfO8KGs75z_9evFvxcobyKp8tPCXHFby0C3iIbEsAbhCtpBS-xihr3GPbzwSboAOVmmX_OSL9jxfggh0kCK6jJB9LgoJ_N_5e8W9ZfATzw"
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "headers": {
+            "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "pragma": "no-cache",
+            "expires": "0",
+            "x-frame-options": "DENY",
+            "content-type": "application/json",
+            "transfer-encoding": "chunked",
+            "date": "Tue, 08 Oct 2024 08:17:36 GMT",
+            "keep-alive": "timeout=60",
+            "connection": "keep-alive"
+          },
+          "data": {
+            "article": {
+              "slug": "did-you-train-your-dragon1728375457240",
+              "title": "Did you train your dragon1728375457240",
+              "description": "Ever wonder how?",
+              "body": "You have to believe",
+              "tagList": [
+                "angularjs",
+                "dragons",
+                "reactjs"
+              ],
+              "createdAt": "2024-10-08T10:17:37.124Z",
+              "updatedAt": "2024-10-08T10:17:37.252Z",
+              "favorited": false,
+              "favoritesCount": 0,
+              "author": {
+                "username": "uyem1g7ihp456592@example.com",
+                "bio": "I like to skateboard",
+                "image": "https://i.stack.imgur.com/xHWG8.jpg",
+                "following": false
+              }
+            }
+          },
+          "responseTime": 84
+        },
+        "error": null,
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Statut HTTP est 200",
+            "status": "pass",
+            "uid": "dFKlNp-5kGYt8I55qFCVj"
+          },
+          {
+            "description": "Le temps de réponse est inférieur à 200ms",
+            "status": "pass",
+            "uid": "G1ilk_qOObG-gdtd4Ow-U"
+          }
+        ],
+        "runtime": 0.0909275,
+        "suitename": "5-favorite\\delete article from favorite",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "get profile.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://localhost:8080/api/profiles/uyem1g7ihp456592",
+          "headers": {}
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "headers": {
+            "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "pragma": "no-cache",
+            "expires": "0",
+            "x-frame-options": "DENY",
+            "content-type": "application/json",
+            "transfer-encoding": "chunked",
+            "date": "Tue, 08 Oct 2024 08:17:36 GMT",
+            "keep-alive": "timeout=60",
+            "connection": "keep-alive"
+          },
+          "data": {
+            "profile": {
+              "username": "uyem1g7ihp456592@example.com",
+              "bio": "I like to skateboard",
+              "image": "https://i.stack.imgur.com/xHWG8.jpg",
+              "following": false
+            }
+          },
+          "responseTime": 8
+        },
+        "error": null,
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Statut HTTP est 200",
+            "status": "pass",
+            "uid": "dei7sB0-AtdC7m5eX1VHB"
+          }
+        ],
+        "runtime": 0.0122943,
+        "suitename": "get profile",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "unfollow user.bru"
+        },
+        "request": {
+          "method": "DELETE",
+          "url": "http://localhost:8080/api/profiles/uyem1g7ihp456592/follow",
+          "headers": {
+            "Authorization": "Token eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3JlYWx3b3JsZC5pbyIsInN1YiI6IjdhM2FhOTFhLWY0YWQtNGFlYS1iY2NjLTlhNWFmNzU0MWY5MiIsImV4cCI6MTcyODM3NTc1NywiaWF0IjoxNzI4Mzc1NDU3fQ.fEmTaXwG3bLyaWQbaHGXtPTWiCAiw-suJEbUqMJNS7zCO9J31W_yvHPhtH_49hX3-wJTgIE3rM7JQ_RzxxNMg4eRZqMDUtnyIi4afHVU64VdBLn5CVq0ioTzkWT3_R7K0d_WheHCm1n1mEsAykvagkdZC7uIrDIFYlCB01RXtRlptsE80Y24h-3-z6IY-NNFxCn0lw_vng-Vr7qwxrTPHWjbZ9uZ8G9WP7TcA_d0D6txxfO8KGs75z_9evFvxcobyKp8tPCXHFby0C3iIbEsAbhCtpBS-xihr3GPbzwSboAOVmmX_OSL9jxfggh0kCK6jJB9LgoJ_N_5e8W9ZfATzw"
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "headers": {
+            "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "pragma": "no-cache",
+            "expires": "0",
+            "x-frame-options": "DENY",
+            "content-type": "application/json",
+            "transfer-encoding": "chunked",
+            "date": "Tue, 08 Oct 2024 08:17:36 GMT",
+            "keep-alive": "timeout=60",
+            "connection": "keep-alive"
+          },
+          "data": {
+            "profile": {
+              "username": "uyem1g7ihp456592@example.com",
+              "bio": "I like to skateboard",
+              "image": "https://i.stack.imgur.com/xHWG8.jpg",
+              "following": false
+            }
+          },
+          "responseTime": 9
+        },
+        "error": null,
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Statut HTTP est 200",
+            "status": "pass",
+            "uid": "Q6FcfB4PPwHdZSbjRm0_5"
+          },
+          {
+            "description": "Le temps de réponse est inférieur à 200ms",
+            "status": "pass",
+            "uid": "4exThSGkUz15qjdMsNxis"
+          }
+        ],
+        "runtime": 0.0129348,
+        "suitename": "unfollow user",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "delete article.bru"
+        },
+        "request": {
+          "method": "DELETE",
+          "url": "http://localhost:8080/api/articles/did-you-train-your-dragon1728375457240",
+          "headers": {
+            "Authorization": "Token eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3JlYWx3b3JsZC5pbyIsInN1YiI6IjdhM2FhOTFhLWY0YWQtNGFlYS1iY2NjLTlhNWFmNzU0MWY5MiIsImV4cCI6MTcyODM3NTc1NywiaWF0IjoxNzI4Mzc1NDU3fQ.fEmTaXwG3bLyaWQbaHGXtPTWiCAiw-suJEbUqMJNS7zCO9J31W_yvHPhtH_49hX3-wJTgIE3rM7JQ_RzxxNMg4eRZqMDUtnyIi4afHVU64VdBLn5CVq0ioTzkWT3_R7K0d_WheHCm1n1mEsAykvagkdZC7uIrDIFYlCB01RXtRlptsE80Y24h-3-z6IY-NNFxCn0lw_vng-Vr7qwxrTPHWjbZ9uZ8G9WP7TcA_d0D6txxfO8KGs75z_9evFvxcobyKp8tPCXHFby0C3iIbEsAbhCtpBS-xihr3GPbzwSboAOVmmX_OSL9jxfggh0kCK6jJB9LgoJ_N_5e8W9ZfATzw"
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "headers": {
+            "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "pragma": "no-cache",
+            "expires": "0",
+            "x-frame-options": "DENY",
+            "content-length": "0",
+            "date": "Tue, 08 Oct 2024 08:17:36 GMT",
+            "keep-alive": "timeout=60",
+            "connection": "keep-alive"
+          },
+          "data": "",
+          "responseTime": 19
+        },
+        "error": null,
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Statut HTTP est 200",
+            "status": "pass",
+            "uid": "-vWhFK_X_tYvjMgdVybMb"
+          },
+          {
+            "description": "Le temps de réponse est inférieur à 200ms",
+            "status": "pass",
+            "uid": "KBfHPkrX6mofCVPUfaeKp"
+          }
+        ],
+        "runtime": 0.022867,
+        "suitename": "delete article",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "get tag.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://localhost:8080/api/tags",
+          "headers": {}
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "headers": {
+            "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "0",
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "pragma": "no-cache",
+            "expires": "0",
+            "x-frame-options": "DENY",
+            "content-type": "application/json",
+            "transfer-encoding": "chunked",
+            "date": "Tue, 08 Oct 2024 08:17:36 GMT",
+            "keep-alive": "timeout=60",
+            "connection": "keep-alive"
+          },
+          "data": {
+            "tags": [
+              "dragons",
+              "reactjs",
+              "angularjs"
+            ]
+          },
+          "responseTime": 6
+        },
+        "error": null,
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Statut HTTP est 200",
+            "status": "pass",
+            "uid": "Y6Y5ZBhoS_hM9cO6th3Bg"
+          },
+          {
+            "description": "Le temps de réponse est inférieur à 200ms",
+            "status": "pass",
+            "uid": "eWt_xKHOFf3zM6hLw136F"
+          }
+        ],
+        "runtime": 0.010277,
+        "suitename": "get tag",
+        "iterationIndex": 0
+      }
+    ]
+  }
+]

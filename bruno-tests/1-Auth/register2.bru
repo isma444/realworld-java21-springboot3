@@ -1,0 +1,39 @@
+meta {
+  name: register2
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{apiUrl}}/users
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "user":{
+      "username": "{{randomUserName2}}",
+      "email": "{{randomEmail2}}",
+      "password": "{{randomUserName2}}"
+    }
+  }
+}
+
+script:pre-request {
+  var randomPrefix2 = Math.random().toString(36).substring(2, 12); 
+  var timestamp2 = Date.now().toString().slice(-6); 
+  var randomUsername2 = (randomPrefix2 + timestamp2).substring(0, 30); 
+  var randomEmail2 = randomUsername2 + "@example.com";
+  
+  bru.setVar("randomUserName2", randomUsername2)
+  bru.setVar("randomEmail2", randomEmail2);
+  
+}
+
+tests {
+  test("Statut HTTP est 201", function () {
+      expect(res.getStatus()).to.equal(201);
+  });
+  
+}

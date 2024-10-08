@@ -1,0 +1,25 @@
+meta {
+  name: get user
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{apiUrl}}/user
+  body: json
+  auth: none
+}
+
+params:query {
+  ~Authorization: Token {{jwtToken}}
+}
+
+headers {
+  Authorization: Token {{jwtToken}}
+}
+
+tests {
+  test("Statut HTTP est 200", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+}

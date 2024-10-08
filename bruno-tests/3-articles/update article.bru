@@ -1,0 +1,41 @@
+meta {
+  name: update article
+  type: http
+  seq: 6
+}
+
+put {
+  url: {{apiUrl}}/articles/{{slug}}
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Token {{jwtToken}}
+}
+
+body:json {
+  {
+    "article": {
+      "title": "Did you train your dragon{{random}}"
+    }
+  }
+}
+
+script:pre-request {
+  bru.setVar("random",Date.now())
+}
+
+script:post-response {
+  bru.setVar("slug2",res.getBody().article.slug)
+}
+
+tests {
+  test("Statut HTTP est 200", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("Le temps de réponse est inférieur à 200ms", function () {
+      expect(res.getResponseTime()).to.be.below(200);
+  });
+}

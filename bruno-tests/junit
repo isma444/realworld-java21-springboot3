@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="1-Auth\register" errors="0" failures="0" skipped="0" tests="1" timestamp="2024-10-08T08:17:37.514" hostname="WJAVA-13" time="0.223">
+    <testcase name="Statut HTTP est 201" status="pass" classname="http://localhost:8080/api/users" time="0.223"/>
+  </testsuite>
+  <testsuite name="1-Auth\register2" errors="0" failures="0" skipped="0" tests="1" timestamp="2024-10-08T08:17:37.519" hostname="WJAVA-13" time="0.185">
+    <testcase name="Statut HTTP est 201" status="pass" classname="http://localhost:8080/api/users" time="0.185"/>
+  </testsuite>
+  <testsuite name="1-Auth\login" errors="0" failures="0" skipped="0" tests="3" timestamp="2024-10-08T08:17:37.519" hostname="WJAVA-13" time="0.092">
+    <testcase name="Statut HTTP est 201" status="pass" classname="http://localhost:8080/api/users/login" time="0.031"/>
+    <testcase name="la response contient un user" status="pass" classname="http://localhost:8080/api/users/login" time="0.031"/>
+    <testcase name="Le temps de réponse est inférieur à 200ms" status="pass" classname="http://localhost:8080/api/users/login" time="0.031"/>
+  </testsuite>
+  <testsuite name="2-user\get user" errors="0" failures="0" skipped="0" tests="1" timestamp="2024-10-08T08:17:37.519" hostname="WJAVA-13" time="0.011">
+    <testcase name="Statut HTTP est 200" status="pass" classname="http://localhost:8080/api/user" time="0.011"/>
+  </testsuite>
+  <testsuite name="2-user\update user" errors="0" failures="0" skipped="0" tests="1" timestamp="2024-10-08T08:17:37.520" hostname="WJAVA-13" time="0.020">
+    <testcase name="Statut HTTP est 200" status="pass" classname="http://localhost:8080/api/user" time="0.020"/>
+  </testsuite>
+  <testsuite name="3-articles\create article" errors="0" failures="0" skipped="0" tests="2" timestamp="2024-10-08T08:17:37.520" hostname="WJAVA-13" time="0.062">
+    <testcase name="Statut HTTP est 200" status="pass" classname="http://localhost:8080/api/articles" time="0.031"/>
+    <testcase name="Le temps de réponse est inférieur à 200ms" status="pass" classname="http://localhost:8080/api/articles" time="0.031"/>
+  </testsuite>
+  <testsuite name="3-articles\Follow user" errors="0" failures="0" skipped="0" tests="2" timestamp="2024-10-08T08:17:37.520" hostname="WJAVA-13" time="0.029">
+    <testcase name="Statut HTTP est 200" status="pass" classname="http://localhost:8080/api/profiles/00ow3hvoss456800/follow" time="0.015"/>
+    <testcase name="Le temps de réponse est inférieur à 200ms" status="pass" classname="http://localhost:8080/api/profiles/00ow3hvoss456800/follow" time="0.015"/>
+  </testsuite>
+  <testsuite name="3-articles\get articles" errors="0" failures="0" skipped="0" tests="4" timestamp="2024-10-08T08:17:37.520" hostname="WJAVA-13" time="0.019">
+    <testcase name="Response status code is 200" status="pass" classname="http://localhost:8080/api/articles" time="0.005"/>
+    <testcase name="Content type is application/json" status="pass" classname="http://localhost:8080/api/articles" time="0.005"/>
+    <testcase name="Response includes the articles array" status="pass" classname="http://localhost:8080/api/articles" time="0.005"/>
+    <testcase name="Articles count is a non-negative integer" status="pass" classname="http://localhost:8080/api/articles" time="0.005"/>
+  </testsuite>
+  <testsuite name="3-articles\feed" errors="0" failures="0" skipped="0" tests="2" timestamp="2024-10-08T08:17:37.520" hostname="WJAVA-13" time="0.015">
+    <testcase name="Statut HTTP est 200" status="pass" classname="http://localhost:8080/api/articles/feed" time="0.007"/>
+    <testcase name="Le temps de réponse est inférieur à 200ms" status="pass" classname="http://localhost:8080/api/articles/feed" time="0.007"/>
+  </testsuite>
+  <testsuite name="3-articles\get article" errors="0" failures="0" skipped="0" tests="0" timestamp="2024-10-08T08:17:37.520" hostname="WJAVA-13" time="0.009"/>
+  <testsuite name="3-articles\update article" errors="0" failures="0" skipped="0" tests="2" timestamp="2024-10-08T08:17:37.520" hostname="WJAVA-13" time="0.027">
+    <testcase name="Statut HTTP est 200" status="pass" classname="http://localhost:8080/api/articles/how-to-train-your-dragon460" time="0.013"/>
+    <testcase name="Le temps de réponse est inférieur à 200ms" status="pass" classname="http://localhost:8080/api/articles/how-to-train-your-dragon460" time="0.013"/>
+  </testsuite>
+  <testsuite name="4-comments\add comment to an article" errors="0" failures="0" skipped="0" tests="2" timestamp="2024-10-08T08:17:37.520" hostname="WJAVA-13" time="0.018">
+    <testcase name="Statut HTTP est 200" status="pass" classname="http://localhost:8080/api/articles/did-you-train-your-dragon1728375457240/comments" time="0.009"/>
+    <testcase name="Le temps de réponse est inférieur à 200ms" status="pass" classname="http://localhost:8080/api/articles/did-you-train-your-dragon1728375457240/comments" time="0.009"/>
+  </testsuite>
+  <testsuite name="4-comments\get comments from article" errors="0" failures="0" skipped="0" tests="2" timestamp="2024-10-08T08:17:37.520" hostname="WJAVA-13" time="0.015">
+    <testcase name="Statut HTTP est 200" status="pass" classname="http://localhost:8080/api/articles/did-you-train-your-dragon1728375457240/comments" time="0.007"/>
+    <testcase name="Le temps de réponse est inférieur à 200ms" status="pass" classname="http://localhost:8080/api/articles/did-you-train-your-dragon1728375457240/comments" time="0.007"/>
+  </testsuite>
+  <testsuite name="4-comments\delete comment" errors="0" failures="0" skipped="0" tests="2" timestamp="2024-10-08T08:17:37.521" hostname="WJAVA-13" time="0.019">
+    <testcase name="Statut HTTP est 200" status="pass" classname="http://localhost:8080/api/articles/did-you-train-your-dragon1728375457240/comments/2" time="0.010"/>
+    <testcase name="Le temps de réponse est inférieur à 200ms" status="pass" classname="http://localhost:8080/api/articles/did-you-train-your-dragon1728375457240/comments/2" time="0.010"/>
+  </testsuite>
+  <testsuite name="5-favorite\add article to favorite" errors="0" failures="0" skipped="0" tests="2" timestamp="2024-10-08T08:17:37.521" hostname="WJAVA-13" time="0.043">
+    <testcase name="Statut HTTP est 200" status="pass" classname="http://localhost:8080/api/articles/did-you-train-your-dragon1728375457240/favorite" time="0.022"/>
+    <testcase name="Le temps de réponse est inférieur à 200ms" status="pass" classname="http://localhost:8080/api/articles/did-you-train-your-dragon1728375457240/favorite" time="0.022"/>
+  </testsuite>
+  <testsuite name="5-favorite\delete article from favorite" errors="0" failures="0" skipped="0" tests="2" timestamp="2024-10-08T08:17:37.521" hostname="WJAVA-13" time="0.091">
+    <testcase name="Statut HTTP est 200" status="pass" classname="http://localhost:8080/api/articles/did-you-train-your-dragon1728375457240/favorite" time="0.045"/>
+    <testcase name="Le temps de réponse est inférieur à 200ms" status="pass" classname="http://localhost:8080/api/articles/did-you-train-your-dragon1728375457240/favorite" time="0.045"/>
+  </testsuite>
+  <testsuite name="get profile" errors="0" failures="0" skipped="0" tests="1" timestamp="2024-10-08T08:17:37.521" hostname="WJAVA-13" time="0.012">
+    <testcase name="Statut HTTP est 200" status="pass" classname="http://localhost:8080/api/profiles/uyem1g7ihp456592" time="0.012"/>
+  </testsuite>
+  <testsuite name="unfollow user" errors="0" failures="0" skipped="0" tests="2" timestamp="2024-10-08T08:17:37.521" hostname="WJAVA-13" time="0.013">
+    <testcase name="Statut HTTP est 200" status="pass" classname="http://localhost:8080/api/profiles/uyem1g7ihp456592/follow" time="0.006"/>
+    <testcase name="Le temps de réponse est inférieur à 200ms" status="pass" classname="http://localhost:8080/api/profiles/uyem1g7ihp456592/follow" time="0.006"/>
+  </testsuite>
+  <testsuite name="delete article" errors="0" failures="0" skipped="0" tests="2" timestamp="2024-10-08T08:17:37.521" hostname="WJAVA-13" time="0.023">
+    <testcase name="Statut HTTP est 200" status="pass" classname="http://localhost:8080/api/articles/did-you-train-your-dragon1728375457240" time="0.011"/>
+    <testcase name="Le temps de réponse est inférieur à 200ms" status="pass" classname="http://localhost:8080/api/articles/did-you-train-your-dragon1728375457240" time="0.011"/>
+  </testsuite>
+  <testsuite name="get tag" errors="0" failures="0" skipped="0" tests="2" timestamp="2024-10-08T08:17:37.521" hostname="WJAVA-13" time="0.010">
+    <testcase name="Statut HTTP est 200" status="pass" classname="http://localhost:8080/api/tags" time="0.005"/>
+    <testcase name="Le temps de réponse est inférieur à 200ms" status="pass" classname="http://localhost:8080/api/tags" time="0.005"/>
+  </testsuite>
+</testsuites>

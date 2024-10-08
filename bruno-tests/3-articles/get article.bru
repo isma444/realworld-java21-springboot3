@@ -1,0 +1,11 @@
+meta {
+  name: get article
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{apiUrl}}/articles/{{slug}}
+  body: none
+  auth: none
+}

@@ -1,0 +1,17 @@
+meta {
+  name: get profile
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{apiUrl}}/profiles/{{randomUserName}}
+  body: none
+  auth: none
+}
+
+tests {
+  test("Statut HTTP est 200", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+}

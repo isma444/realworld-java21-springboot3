@@ -1,0 +1,39 @@
+meta {
+  name: login
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{apiUrl}}/users/login
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "user":{
+      "email": "{{randomEmail}}",
+      "password": "{{randomUserName}}"
+    }
+  }
+}
+
+script:post-response {
+  bru.setVar("jwtToken", res.getBody().user.token);
+}
+
+tests {
+  test("Statut HTTP est 201", function () {
+      expect(res.getStatus()).to.equal(201);
+  });
+  var jsonData = res.getBody();
+  test("la response contient un user", function () {
+      expect(jsonData).to.have.property('user');
+  });
+  test("Le temps de réponse est inférieur à 200ms", function () {
+      expect(res.getResponseTime()).to.be.below(200);
+  });
+  
+  
+}

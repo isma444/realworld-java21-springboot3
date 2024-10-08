@@ -1,0 +1,25 @@
+meta {
+  name: delete article
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{apiUrl}}/articles/{{slug2}}
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Token {{jwtToken}}
+}
+
+tests {
+  test("Statut HTTP est 200", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("Le temps de réponse est inférieur à 200ms", function () {
+      expect(res.getResponseTime()).to.be.below(200);
+  });
+}

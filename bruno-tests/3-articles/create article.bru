@@ -1,0 +1,45 @@
+meta {
+  name: create article
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{apiUrl}}/articles
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Token {{jwtToken}}
+}
+
+body:json {
+  {
+    "article": {
+      "title": "How to train your dragon{{rand}}",
+      "description": "Ever wonder how?",
+      "body": "You have to believe",
+      "tagList": ["reactjs", "angularjs", "dragons"]
+    }
+  }
+}
+
+script:pre-request {
+  var randomNumber = Math.floor(Math.random() * 999) + 1;
+  bru.setVar("rand",randomNumber)
+}
+
+script:post-response {
+  bru.setVar("slug",res.getBody().article.slug)
+}
+
+tests {
+  test("Statut HTTP est 200", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("Le temps de réponse est inférieur à 200ms", function () {
+      expect(res.getResponseTime()).to.be.below(200);
+  });
+}
