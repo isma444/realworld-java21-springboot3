@@ -27,6 +27,17 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build --stacktrace
 
+      - name: Install GPG
+        run: sudo apt-get install gnupg
+
+      - name: Import GPG Private Key
+        run: |
+          echo "${{ secrets.GPG_KEYS }}" | gpg --import
+
+      - name: Sign the Jar File
+        run: |
+          gpg --batch --yes --passphrase "${{ secrets.PASSPHRASE }}" \
+          --output bootstrap/libs/bootstrap-signed.jar --sign bootstrap/libs/bootstrap.jar
      
       - name: Run Unit Tests
         run: ./gradlew test --stacktrace
@@ -53,14 +64,4 @@ jobs:
           cd bruno-tests
           bru run --env local
           
-      - name: Install GPG
-        run: sudo apt-get install gnupg
-
-      - name: Import GPG Private Key
-        run: |
-          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --import
-
-      - name: Sign the Jar File
-        run: |
-          gpg --batch --yes --passphrase "${{ secrets.KEYSTORE_PASSWORD }}" \
-          --output bootstrap/libs/bootstrap-signed.jar --sign bootstrap/libs/bootstrap.jar
+      -
