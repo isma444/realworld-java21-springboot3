@@ -60,6 +60,7 @@ jobs:
         run: |
           echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --import
 
-      - name: Sign JAR File
+      - name: Sign the Jar File
         run: |
-          gpg --batch --yes --passphrase "${{ secrets.KEYSTORE_PASSWORD }}" -o bootstrap/libs/bootstrap.jar.sig -s bootstrap/libs/bootstrap.jar
+          gpg --batch --yes --passphrase "${{ secrets.KEYSTORE_PASSWORD }}" \
+          --output bootstrap/libs/bootstrap-signed.jar --sign bootstrap/libs/bootstrap.jar
