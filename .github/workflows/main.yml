@@ -36,7 +36,7 @@ jobs:
 
       - name: Sign the Jar File
         run: |
-          gpg --batch --yes --passphrase "${{ secrets.PASSPHRASE }}" \
+          gpg --batch --yes --passphrase "${{ secrets.PASSPHRASE }}" --peinentry-node\
           --output bootstrap/build/libs/bootstrap-signed.jar --sign bootstrap/build/libs/bootstrap.jar
      
       - name: Run Unit Tests
