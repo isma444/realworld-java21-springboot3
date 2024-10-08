@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build-and-sign:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -23,7 +23,11 @@ jobs:
 
       - name: Build with Gradle
         run: ./gradlew build --stacktrace
-
+        
+  sign:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - name: Install GPG
         run: sudo apt-get install gnupg
 
@@ -44,7 +48,7 @@ jobs:
 
   run-tests:
     runs-on: ubuntu-latest
-    needs: build-and-sign
+    needs: build
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
