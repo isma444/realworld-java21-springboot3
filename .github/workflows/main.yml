@@ -33,7 +33,7 @@ jobs:
         
       - name: Start the Java application
         run: |
-           nohup java -jar bootstrap/libs/bootstrap.jar &
+           nohup java -jar bootstrap/build/libs/bootstrap.jar &
           
       - name: Wait for the application to start
         run: |
