@@ -33,12 +33,12 @@ jobs:
         
       - name: Start the Java application
         run: |
-         nohup java -jar bootstrap/libs/bootstrap.jar &
+           nohup java -jar bootstrap/libs/bootstrap.jar &
           
       - name: Wait for the application to start
         run: |
           echo "Waiting for the application to start..."
-          sleep 10 
+          sleep 20 
           
       - name: Install Node.js
         uses: actions/setup-node@v2
