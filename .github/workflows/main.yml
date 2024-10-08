@@ -41,9 +41,7 @@ jobs:
         run: npm install -g @usebruno/cli 
 
       - name: Run Bruno tests
-        run: |
-          bru run bruno-tests/ --env local \
-          --reporters cli,json \
-          --reporter-json-export test-reports/bruno-report.json
+        run: bru run bruno-tests/ --env local 
+          
 
       
